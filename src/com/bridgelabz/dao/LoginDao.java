@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.bridgelabz.model.LoginModel;
+import com.bridgelabz.model.User;
 
 public class LoginDao {
 	static Connection con;
@@ -21,7 +21,7 @@ public class LoginDao {
 		}
 	}
 
-	public int registration(LoginModel model) {
+	public int registration(User model) {
 
 		int result = 0;
 		getConnection();
@@ -45,7 +45,7 @@ public class LoginDao {
 
 	}
 
-	public int login(LoginModel model) {
+	public int login(User model) {
 
 		int count = 0;
 		getConnection();

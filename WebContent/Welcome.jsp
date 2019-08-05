@@ -15,8 +15,9 @@
 		}
 	%>
 
-	<p>You are successfully logged in!</p><br>
-	
+	<p>You are successfully logged in!</p>
+	<br>
+
 
 	<form action="logout">
 		<input type="submit" value="Logout">

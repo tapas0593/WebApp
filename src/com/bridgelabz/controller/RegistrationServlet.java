@@ -20,8 +20,8 @@ public class RegistrationServlet extends HttpServlet {
 		if (result > 0) {
 			resp.sendRedirect("Login.html");
 		}else {
-			HttpSession session=req.getSession();
-			session.setAttribute("name", req.getParameter("name"));
+//			HttpSession session=req.getSession();
+//			session.setAttribute("name", req.getParameter("name"));
 			resp.sendRedirect("RegistrationError.jsp");
 		}
 	}
