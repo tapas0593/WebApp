@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <title>Login</title>
+
 <body>
-	<form action="LoginServlet" method="post">
-		Email: <input type="email" name="email"><br> Password: <input
-			type="password" name="password"><br> <input
-			type="submit" value="Login">
-			<a href="Register.html">   Do not have an account? Register</a>
-	</form>
+	<div style="text-align: center;">
+		<form action="login" method="post">
+			Email: <input type="email" name="email" required><br>
+			Password: <input type="password" name="password" required><br>
+			<input type="submit" value="Login"><br> <a
+				href="Register.html"> Do not have an account? Register</a><br>
+
+		</form>
+	</div>
 </body>
 </html>

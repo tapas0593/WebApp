@@ -7,17 +7,17 @@
 
 	<servlet>
 		<servlet-name>Login</servlet-name>
-		<servlet-class>com.bridgelabz.controller.LoginServlet</servlet-class>
+		<servlet-class>com.bridgelabz.controller.UserLoginServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>Login</servlet-name>
-		<url-pattern>/LoginServlet</url-pattern>
+		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>Register</servlet-name>
-		<servlet-class>com.bridgelabz.controller.RegistrationServlet</servlet-class>
+		<servlet-class>com.bridgelabz.controller.UserRegistrationServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
@@ -35,13 +35,23 @@
 		<url-pattern>/logout</url-pattern>
 	</servlet-mapping>
 
-	<!-- <filter>
-		<filter-name>AuthenticationFiller</filter-name>
+	<filter>
+		<filter-name>AuthenticationFilter1</filter-name>
 		<filter-class>com.bridgelabz.filter.AuthenticationFilter</filter-class>
 	</filter>
 
 	<filter-mapping>
-		<filter-name>AuthenticationFiller</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping> -->
+		<filter-name>AuthenticationFilter1</filter-name>
+		<url-pattern>/Welcome.jsp</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>AuthenticationFilter2</filter-name>
+		<filter-class>com.bridgelabz.filter.AuthenticationFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>AuthenticationFilter2</filter-name>
+		<url-pattern>/Profile.jsp</url-pattern>
+	</filter-mapping>
 </web-app>

@@ -12,12 +12,11 @@ public class Logout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		HttpSession session = req.getSession();
-
-		session.removeAttribute("email");
-
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+//		session.removeAttribute("email");
 		session.invalidate();
-		resp.sendRedirect("Login.html");
+		response.sendRedirect("Login.html");
 	}
 }

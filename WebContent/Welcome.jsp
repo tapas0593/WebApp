@@ -8,19 +8,14 @@
 <title>Welcome</title>
 </head>
 <body>
-	<%
-		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-		if (session.getAttribute("email") == null) {
-			response.sendRedirect("Login.html");
-		}
-	%>
-
-	<p>You are successfully logged in!</p>
+	<p style="color: maroon;">
+		Welcome,
+		<%=session.getAttribute("name")%>. You are successfully logged in!
+	</p>
 	<br>
-
-
 	<form action="logout">
-		<input type="submit" value="Logout">
+		<input type="submit" value="Logout"><br> <a
+			href="Profile.jsp">View My Profile</a>
 	</form>
 </body>
 </html>

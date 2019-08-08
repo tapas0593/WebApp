@@ -2,6 +2,7 @@ package com.bridgelabz.filter;
 
 import java.io.IOException;
 
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -24,10 +25,11 @@ public class AuthenticationFilter implements Filter {
 			throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(false);
+		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 		String uri=request.getRequestURI();
 		
-		if (session.getAttribute("email") == null && !(uri.endsWith("html"))) {
+		if (session == null &&  !(uri.endsWith("html"))) {
 
 			response.sendRedirect("Login.html");
 		} else {
